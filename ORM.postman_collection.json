@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "8c179868-06aa-4f43-aa7a-47c914793432",
+		"name": "ORM",
+		"description": "Practica de ORM, curso Sr. Programmer.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21269070"
+	},
+	"item": [
+		{
+			"name": "create_shop",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cuit\": 23467857777,\r\n  \"name\": \"Dia\",\r\n  \"password\": \"dia123\",\r\n  \"tel\": 67883333,\r\n  \"address\": \"labruNA 5876\",\r\n  \"email\":\"soporte@dia.com.ar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/shops",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"shops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Harina 0000\",\r\n  \"description\": \"Harina trigo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/category",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_product_reference",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\":\"Favorita 0000\",\r\n  \"size\":1000,\r\n  \"maker\":\"Molinos\"\r\n}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/reference/product",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"reference",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_price_reference",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id_product_reference\": 4,\r\n  \"category_id\": 8,\r\n  \"date\":\"2023-05-25\",\r\n  \"notes\":\"Nada que aclarar\",\r\n  \"price\":400\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/reference/price",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"reference",
+						"price"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"shop_id\": 4,\r\n  \"category_id\": 8,\r\n  \"date\":\"2023-05-26\",\r\n  \"title\": \"Blancaflor 0000\",\r\n  \"size\":1000,\r\n  \"maker\":\"Molinos\",\r\n  \"notes\":\"ideal reposteria\",\r\n  \"price\":1020\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/product",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_shop",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/shops?cuit=23456789234",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"shops"
+					],
+					"query": [
+						{
+							"key": "cuit",
+							"value": "23456789234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/category?description=ACEITES",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"category"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "girasol",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "ACEITES"
+						},
+						{
+							"key": "category_id",
+							"value": "6",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_reference",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/reference?id_product_reference=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"reference"
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "CREMON",
+							"disabled": true
+						},
+						{
+							"key": "id_product_reference",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/product?load_date=2023-05-15",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"product"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "cindor",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "shop_id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "maker",
+							"value": "masteLLONE",
+							"disabled": true
+						},
+						{
+							"key": "load_date",
+							"value": "2023-05-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "price above limit",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/prices_above_limit?category_title=Harina 0000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"prices_above_limit"
+					],
+					"query": [
+						{
+							"key": "category_title",
+							"value": "Harina 0000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify_pass",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/shops/verify?cuit=24463333217&password=DiaOfertas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"shops",
+						"verify"
+					],
+					"query": [
+						{
+							"key": "cuit",
+							"value": "24463333217"
+						},
+						{
+							"key": "password",
+							"value": "DiaOfertas"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
