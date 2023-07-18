@@ -1,2 +1,6 @@
 Lib/site-packages/
 __pycache__/
+pyvenv.cfg
+DER.drawio
+Scripts/
+.vscode
